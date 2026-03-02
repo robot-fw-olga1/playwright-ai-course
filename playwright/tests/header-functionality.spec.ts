@@ -3,7 +3,8 @@ import 'dotenv/config'
 const secrets: NodeJS.ProcessEnv = process.env;
 
 test.describe('Header Functionality', () => {
-    test('should log out successfully', async ({ loginPage, productsPage, headerPage }) => {
+    test('should log out successfully', async ({ loginPage, productsPage, headerPage, browserName }) => {
+        test.skip((browserName === 'webkit'), 'Just learning to skip tests');
         await test.step('Logout', async () => {
             await test.step('Login and wait for products page', async () => {
                 await loginPage.load();

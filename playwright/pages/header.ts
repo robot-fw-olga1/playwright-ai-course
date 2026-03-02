@@ -10,7 +10,8 @@ export class HeaderPage {
     constructor(page: Page) {
         this.page = page;
         this.cartLink = page.locator('a[href="/cart"]').describe('cart link');
-        this.signOutBtn = page.locator('header button[class="font-bold"]:nth-child(1)').describe('sign out button');
+        this.signOutBtn = page.locator('header button[class="font-bold"]').describe('sign out button');
+        // this.signOutBtn = page.locator('header button[class="font-bold"]:nth-child(1)').describe('sign out button'); was failing in webkit browser
     }
     async clickCartLink() {
         await test.step('Click cart link', async () => {
