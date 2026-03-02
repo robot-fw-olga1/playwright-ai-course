@@ -33,7 +33,7 @@ jobs:
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
-        name: blob-report-${{ matrix.shardIndex }} // this is a unique name for each shard to avoid conflicts
+        name: blob-report-${{ matrix.shardIndex }}
         path: blob-report
         retention-days: 1
 
